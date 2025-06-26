@@ -6,6 +6,7 @@ const ConnectDB = require("./src/config/dbConection")
 const express = require("express");
 const Register = require("./src/routes/Auth/auth.route");
 const UserRouter = require('./src/routes/user/user.route');
+const UploadRouter = require('./src/routes/upload/upload.route')
 const port = 4040;
 const App = express();
 
@@ -14,6 +15,7 @@ App.use(express.json())
  
 App.use("/auth",Register) 
 App.use("/user",UserRouter)
+App.use("/user", UploadRouter)
  
 App.get("/", (req, res) => {
   
