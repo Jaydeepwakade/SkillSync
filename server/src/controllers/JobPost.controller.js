@@ -11,5 +11,15 @@ const postJob = async (req, res) => {
   }
 };
 
-module.exports = {postJob}
+  const getallJobs = async(req,res)=>{
+
+     try {
+        const jobs = await  jobModel.find()
+        res.status(200).json({message:' job etch suyccesfully', jobs})
+     } catch (error) {
+        res.status(401).json({message:"error while fetching the jobs",error:error.message})
+     }
+  }
+
+module.exports = {postJob,getallJobs} 
  
