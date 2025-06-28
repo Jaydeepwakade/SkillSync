@@ -12,9 +12,8 @@ const UploadResume = async (req, res) => {
          cloudinary.uploader.upload(filepath , async(err,result)=>{
             if(err){
                 res.status(400),json({message:"upload failed"})
-            }
-
-           
+            } 
+            
             user.resume= result.secure_url
              await user.save()
              res.status(200).json({message:"file upload succesfully", url:result.secure_url, user})
