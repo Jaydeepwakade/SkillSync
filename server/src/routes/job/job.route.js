@@ -5,4 +5,4 @@ const { postJob } = require("../../controllers/JobPost.controller")
 const router = express.Router()
 
 router.post("/Postjob",JobMiddleware,postJob)
-module.exports= router
+module.exports= router //
